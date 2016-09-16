@@ -1,5 +1,5 @@
 function binary() {
-  return Math.floor(Math.random() * (1 - 0 + 1));
+  return Math.floor(Math.random() * 2);
 }
 
 for(let i = 1; i < window.innerWidth / 4; i++) {
@@ -55,7 +55,7 @@ function state(cell) {
 }
 
 function setIsActive(cell, isActive) {
-  if (!!isActive) {
+  if (isActive) {
     cell.classList.remove('inactive');
     cell.classList.add('active');
   } else {
