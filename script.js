@@ -15,25 +15,22 @@ for (let i = 0; i < 256; i++) {
 // Renders automata to screen
 function generateAutomata() {
   ruleNumber = select.options[select.selectedIndex].value;
+  container.innerHTML = '';
 
-  if (parseInt(ruleNumber) >= 0) {
-    container.innerHTML = '';
+  // Create oringial row and append it to the container
+  let row = document.createElement('div');
+  row.setAttribute('class', 'row');
+  container.appendChild(row);
 
-    // Create oringial row and append it to the container
-    let row = document.createElement('div');
-    row.setAttribute('class', 'row');
-    container.appendChild(row);
+  // Creates divs and appends to row based on width of window
+  for(let i = 1; i < container.clientWidth / 4; i++) {
+    let div = document.createElement('div');
+    row.appendChild(div);
+  }
 
-    // Creates divs and appends to row based on width of window
-    for(let i = 1; i < container.clientWidth / 4; i++) {
-      let div = document.createElement('div');
-      row.appendChild(div);
-    }
-
-    randomizeRow(row);
-    for (let i = 1; i < container.clientHeight / 4; i++) {
-      setTimeout(duplicateRow, i * 10);
-    }
+  randomizeRow(row);
+  for (let i = 1; i < container.clientHeight / 4; i++) {
+    setTimeout(duplicateRow, i * 10);
   }
 }
 
