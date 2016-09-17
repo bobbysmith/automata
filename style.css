@@ -51,6 +51,12 @@ header {
   padding: 0 5%;
 }
 
+label {
+  color: white;
+  margin-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
   height: calc(100vh - 46px);
   width: 100%;
