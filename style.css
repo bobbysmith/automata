@@ -19,7 +19,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -42,21 +42,34 @@ table {
   border-spacing: 0;
 }
 
+header {
+  height: 32px;
+  background: #26292C;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 5%;
+}
+
 .container {
-  height: 100%;
+  height: calc(100vh - 46px);
   width: 100%;
 }
+
 .row {
   height: 4px;
 }
+
 .row div {
   height: 4px;
   width: 4px;
   display: inline-block;
 }
+
 .row .active {
   background: #040404;
 }
+
 .row .inactive {
   background: #fefefe;
 }

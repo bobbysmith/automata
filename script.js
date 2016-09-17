@@ -20,14 +20,14 @@ function generateAutomata() {
   container.appendChild(row);
 
   // Creates divs and appends to row based on width of window
-  for(let i = 1; i < window.innerWidth / 4; i++) {
+  for(let i = 1; i < container.clientWidth / 4; i++) {
     let div = document.createElement('div');
     row.appendChild(div);
   }
 
   digit = select.options[select.selectedIndex].value;
   randomizeRow(row);
-  for (let i = 1; i < window.innerHeight / 4; i++) {
+  for (let i = 1; i < container.clientHeight / 4; i++) {
     setTimeout(duplicateRow, i * 10);
   }
 
