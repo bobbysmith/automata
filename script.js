@@ -1,6 +1,8 @@
 const row = document.querySelector('.row');
 const select = document.querySelector('.select');
 const container = document.querySelector('.container');
+const random = document.querySelector('.random');
+const current = document.querySelector('.current');
 const rulesIcon = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
@@ -15,6 +17,31 @@ for (let i = 0; i < 256; i++) {
 // Renders automata to screen
 function generateAutomata() {
   ruleNumber = select.options[select.selectedIndex].value;
+  current.innerHTML = `Rule: ${ruleNumber}`;
+  container.innerHTML = '';
+
+  // Create oringial row and append it to the container
+  let row = document.createElement('div');
+  row.setAttribute('class', 'row');
+  container.appendChild(row);
+
+  // Creates divs and appends to row based on width of window
+  for(let i = 1; i < container.clientWidth / 4; i++) {
+    let div = document.createElement('div');
+    row.appendChild(div);
+  }
+
+  randomizeRow(row);
+  for (let i = 1; i < container.clientHeight / 4; i++) {
+    setTimeout(duplicateRow, i * 10);
+  }
+}
+
+// Generates random automata when button is clicked
+function generateRandom() {
+  ruleNumber = Math.floor(Math.random() * 255);
+  current.innerHTML = `Rule: ${ruleNumber}`;
+  select.selectedIndex = 0;
   container.innerHTML = '';
 
   // Create oringial row and append it to the container
@@ -111,3 +138,4 @@ function toggleActive(cell, isActive) {
 }
 
 select.addEventListener('change', generateAutomata);
+random.addEventListener('click', generateRandom);
