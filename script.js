@@ -2,7 +2,7 @@ const row = document.querySelector('.row');
 const select = document.querySelector('.select');
 const container = document.querySelector('.container');
 const random = document.querySelector('.random');
-const current = document.querySelector('.current');
+const current = document.querySelector('.current span');
 const rulesIcon = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
@@ -40,7 +40,7 @@ function generateAutomata() {
 // Generates random automata when button is clicked
 function generateRandom() {
   ruleNumber = Math.floor(Math.random() * 255);
-  current.innerHTML = `Rule: ${ruleNumber}`;
+  current.innerText = `${ruleNumber}`;
   select.selectedIndex = 0;
   container.innerHTML = '';
 

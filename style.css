@@ -44,11 +44,12 @@ table {
 
 body {
   overflow: hidden;
+  background: #191919;
 }
 
 header {
   height: 32px;
-  background: #26292C;
+  background: #080808;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,9 +86,9 @@ header {
 }
 
 .row .active {
-  background: #040404;
+  background: #191919;
 }
 
 .row .inactive {
-  background: #fefefe;
+  background: #26292c;
 }
