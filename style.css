@@ -42,23 +42,36 @@ table {
   border-spacing: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
 header {
   height: 32px;
   background: #26292C;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: space-between;
+  height: 5em;
   padding: 0 5%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
+}
+
+.selection {
+  color: #fff;
+  font-size: 12px;
 }
 
 .current {
   color: #fff;
+  font-size: 20px;
 }
 
 .container {
-  height: calc(100vh - 46px);
+  height: calc(100vh - 4em);
   width: 100%;
+  position: relative;
+  top: -9px;
 }
 
 .row {

@@ -33,7 +33,7 @@ function generateAutomata() {
 
   randomizeRow(row);
   for (let i = 1; i < container.clientHeight / 4; i++) {
-    setTimeout(duplicateRow, i * 10);
+    duplicateRow();
   }
 }
 
@@ -57,7 +57,7 @@ function generateRandom() {
 
   randomizeRow(row);
   for (let i = 1; i < container.clientHeight / 4; i++) {
-    setTimeout(duplicateRow, i * 10);
+    duplicateRow();
   }
 }
 
