@@ -17,10 +17,10 @@ for (let i = 0; i < 256; i++) {
 // Renders automata to screen
 function generateAutomata() {
   ruleNumber = select.options[select.selectedIndex].value;
-  current.innerHTML = `Rule: ${ruleNumber}`;
+  current.innerHTML = `${ruleNumber}`;
   container.innerHTML = '';
 
-  // Create oringial row and append it to the container
+  // Create original row and append it to the container
   let row = document.createElement('div');
   row.setAttribute('class', 'row');
   container.appendChild(row);
